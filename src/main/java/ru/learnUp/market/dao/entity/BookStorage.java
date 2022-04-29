@@ -26,18 +26,4 @@ public class BookStorage {
     @Column
     private int booksCount;
 
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        BookStorage that = (BookStorage) o;
-        return bookStorageId != null && Objects.equals(bookStorageId, that.bookStorageId);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

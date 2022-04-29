@@ -29,16 +29,4 @@ public class BooksOrder {
     @OneToMany
     private List<OrderDetails> listOfOrderDetails;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        BooksOrder order = (BooksOrder) o;
-        return orderId != null && Objects.equals(orderId, order.orderId);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

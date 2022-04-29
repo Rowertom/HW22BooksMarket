@@ -29,16 +29,5 @@ public class OrderDetails {
     @Column
     private int booksCount;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        OrderDetails that = (OrderDetails) o;
-        return orderDetailsId != null && Objects.equals(orderDetailsId, that.orderDetailsId);
-    }
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

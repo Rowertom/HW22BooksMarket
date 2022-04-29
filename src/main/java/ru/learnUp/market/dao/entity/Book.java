@@ -11,7 +11,7 @@ import java.util.Objects;
 @Table
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "author")
 @RequiredArgsConstructor
 public class Book {
 
@@ -38,16 +38,4 @@ public class Book {
     @OneToMany(mappedBy = "book", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<BookStorage> bookStorage;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Book book = (Book) o;
-        return bookId != null && Objects.equals(bookId, book.bookId);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }
